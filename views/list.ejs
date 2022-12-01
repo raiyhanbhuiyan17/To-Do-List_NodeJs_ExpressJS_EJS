@@ -1,0 +1,20 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+  <h1 style="color:blue" > <%= listTitle %>  </h1>
+<!--        <h1 style="color:blue" >  workList  </h1>-->
+
+    </div>
+    <div class="box">
+        <% for(var i=0;i<newListItems.length;i++){ %>
+        <div class="item">
+            <input type="checkbox">
+            <p> <%=newListItems[i] %></p> <!--    In order to run code inside our EJS file we ofcourse have to add the snippets tag on each line where we have some code-->
+        </div>
+        <%}%>      <!--    In order to run code inside our EJS file we ofcourse have to add the snippets tag on each line where we have some code-->
+        <form class="item" action="/" method="post" >
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list" value=<%=listTitle%>>+</button>
+
+        </form>
+    </div>
+<%- include("footer") -%>
